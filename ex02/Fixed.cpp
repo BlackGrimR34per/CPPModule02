@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 23:49:26 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/29 17:13:18 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/30 00:18:55 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,60 @@ Fixed	Fixed::operator*(const Fixed &other) const
 Fixed	Fixed::operator/(const Fixed &other) const
 {
 	return Fixed(this->toFloat() / other.toFloat());
+}
+
+Fixed	&Fixed::operator++(void)
+{
+	this->_fixedPointValue++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp = *this;
+	this->_fixedPointValue++;
+	return (temp);
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	this->_fixedPointValue--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp = *this;
+	this->_fixedPointValue--;
+	return (temp);
+}
+
+Fixed	&Fixed::min(Fixed &first, Fixed &second)
+{
+	if (first > second)
+		return (second);
+	return (first);
+}
+
+const Fixed	&Fixed::min(const Fixed &first, const Fixed &second)
+{
+	if (first > second)
+		return (second);
+	return (first);
+}
+
+Fixed	&Fixed::max(Fixed &first, Fixed &second)
+{
+	if (first > second)
+		return (first);
+	return (second);
+}
+
+const Fixed	&Fixed::max(const Fixed &first, const Fixed &second)
+{
+	if (first > second)
+		return (first);
+	return (second);
 }
 
 Fixed::~Fixed()
