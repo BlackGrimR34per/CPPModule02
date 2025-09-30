@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 16:32:15 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/30 17:14:28 by yosherau         ###   ########.fr       */
+/*   Created: 2025/09/30 17:05:51 by yosherau          #+#    #+#             */
+/*   Updated: 2025/09/30 18:27:02 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+class Point
+{
+	const Fixed	x;
+	const Fixed	y;
+
+	public:
+		Point();
+		Point(float x, float y);
+		Point(const Point &original);
+		Point &operator=(const Point &original);
+		~Point();
+		float	get_x(void) const;
+		float	get_y(void) const;
+};

@@ -5,22 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 16:32:15 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/30 17:14:28 by yosherau         ###   ########.fr       */
+/*   Created: 2025/09/30 16:28:10 by yosherau          #+#    #+#             */
+/*   Updated: 2025/09/30 20:31:24 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+bool bsp(Point const a, Point const b, Point const c, Point const point);
+
+int	main(void)
+{
+	Point first(1, 1);
+	Point second(6, 6);
+	Point third(1, 5);
+	Point plo(2, 1);
+	bool output = bsp(first, second, third, plo);
+	if (output == 1)
+		std::cout << "true" << std::endl;
+	else
+		std::cout << "false" << std::endl;
 }
