@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 23:49:26 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/30 20:59:20 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/10/01 12:43:13 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,30 @@
 Fixed::Fixed():
 	_fixedPointValue(0)
 {
-	std::cout << "Fixed's default constructor called" << std::endl;
+	// std::cout << "Fixed's default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &original)
 {
-	std::cout << "Fixed's copy constructor called" << std::endl;
+	// std::cout << "Fixed's copy constructor called" << std::endl;
 	this->_fixedPointValue = original.getRawBits();
 }
 
 Fixed::Fixed(const int integer)
 {
-	std::cout << "Fixed's int constructor called" << std::endl;
+	// std::cout << "Fixed's int constructor called" << std::endl;
 	this->_fixedPointValue = integer << this->_numFractionalBits;
 }
 
 Fixed::Fixed(const float floatValue)
 {
-	std::cout << "Fixed's float constructor called" << std::endl;
+	// std::cout << "Fixed's float constructor called" << std::endl;
 	this->_fixedPointValue = roundf(floatValue * (1 << this->_numFractionalBits));
 }
 
 Fixed &Fixed::operator=(const Fixed &original)
 {
-	std::cout << "Fixed's copy assignment operator called" << std::endl;
+	// std::cout << "Fixed's copy assignment operator called" << std::endl;
 	if (this != &original)
 		this->_fixedPointValue = original.getRawBits();
 	return (*this);
@@ -154,12 +154,12 @@ const Fixed	&Fixed::max(const Fixed &first, const Fixed &second)
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed's destructor called" << std::endl;
+	// std::cout << "Fixed's destructor called" << std::endl;
 }
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedPointValue);
 }
 
