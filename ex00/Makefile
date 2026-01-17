@@ -3,10 +3,44 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
+#    By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/28 23:45:04 by yosherau          #+#    #+#              #
-#    Updated: 2025/09/28 23:45:05 by yosherau         ###   ########.fr        #
+#    Created: 2026/01/08 18:08:47 by yosherau          #+#    #+#              #
+#    Updated: 2026/01/17 15:42:53 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC			=		c++
+
+FLAGS		=		-Wall -Wextra -Werror -std=c++98
+
+NAME		=		FixedOCF
+
+SRCS_DIR	=		./srcs
+
+SRCS		=		$(wildcard $(SRCS_DIR)/*.cpp)
+
+OBJS_DIR	=		./objs
+
+OBJS		=		$(patsubst $(SRCS_DIR)/%.cpp, $(OBJS_DIR)/%.o, $(SRCS))
+
+RM			=		rm -rf
+
+all:				$(NAME)
+
+$(NAME):			$(OBJS)
+					$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+$(OBJS_DIR)/%.o:	$(SRCS_DIR)/%.cpp | $(OBJS_DIR)
+					$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJS_DIR):
+					mkdir -p $(OBJS_DIR)
+
+clean:
+					$(RM) $(OBJS)
+
+fclean:				clean
+					$(RM) $(NAME)
+
+re:					fclean all
