@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:43:45 by yosherau          #+#    #+#             */
-/*   Updated: 2025/10/01 12:43:33 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:12:48 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "../include/Point.hpp"
 
 static float	area(Point const &p1, Point const &p2, Point const &p3)
 {
@@ -37,3 +37,34 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	PBC = area(point, b, c);
 	return (ABC == (ABP + APC + PBC));
 }
+
+// static float	cross_product(Point const &p1, Point const &p2, Point const &p3)
+// {
+// 	return (p2.get_x() - p1.get_x()) * (p3.get_y() - p1.get_y()) - (p2.get_y() - p1.get_y()) * (p3.get_x() - p1.get_x());
+// }
+
+// bool bsp(Point const a, Point const b, Point const c, Point const point)
+// {
+// 	const double EPSILON = 1e-9;
+
+// 	float	first_area = cross_product(a, b, point);
+// 	float	second_area = cross_product(b, c, point);
+// 	float	third_area = cross_product(c, a, point);
+// 	float	temp_first_area = first_area;
+// 	float	temp_double_area = second_area;
+// 	float	temp_third_area = third_area;
+
+// 	if (first_area < 0)
+// 		temp_first_area = -first_area;
+// 	if (second_area < 0)
+// 		temp_double_area = -second_area;
+// 	if (third_area < 0)
+// 		temp_third_area = -third_area;
+// 	if (temp_first_area < EPSILON || temp_double_area < EPSILON || temp_third_area < EPSILON)
+// 		return (true);
+
+// 	bool all_positive = (first_area > 0) && (second_area > 0) && (third_area > 0);
+// 	bool all_negative = (first_area < 0) && (second_area < 0) && (third_area < 0);
+
+//     return (all_positive || all_negative);
+// }

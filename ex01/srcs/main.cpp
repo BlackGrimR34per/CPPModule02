@@ -6,11 +6,11 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:10:32 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/29 15:11:09 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:50:16 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../include/Fixed.hpp"
 
 int main( void ) {
 	Fixed a;

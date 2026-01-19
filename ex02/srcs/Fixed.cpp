@@ -6,11 +6,11 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 23:49:26 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/30 00:18:55 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:14:57 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../include/Fixed.hpp"
 
 Fixed::Fixed():
 	_fixedPointValue(0)
@@ -80,22 +80,39 @@ bool Fixed::operator!=(const Fixed &other) const
 
 Fixed	Fixed::operator+(const Fixed &other) const
 {
-	return Fixed(this->toFloat() + other.toFloat());
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() + other.getRawBits());
+	return (result);
 }
 
 Fixed	Fixed::operator-(const Fixed &other) const
 {
-	return Fixed(this->toFloat() - other.toFloat());
+	Fixed	result;
+
+	result.setRawBits(this->getRawBits() - other.getRawBits());
+	return (result);
 }
 
 Fixed	Fixed::operator*(const Fixed &other) const
 {
-	return Fixed(this->toFloat() * other.toFloat());
+	Fixed	result;
+	long	temp_value;
+
+	temp_value = this->getRawBits() * other.getRawBits();
+	temp_value = temp_value >> this->_numFractionalBits;
+	result.setRawBits(temp_value);
+	return (result);
 }
 
 Fixed	Fixed::operator/(const Fixed &other) const
 {
-	return Fixed(this->toFloat() / other.toFloat());
+	Fixed	result;
+	long	temp_value;
+
+	temp_value = (this->getRawBits() << this->_numFractionalBits) / other.getRawBits();
+	result.setRawBits(temp_value);
+	return (result);
 }
 
 Fixed	&Fixed::operator++(void)

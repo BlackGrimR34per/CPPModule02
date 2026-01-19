@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 23:49:26 by yosherau          #+#    #+#             */
-/*   Updated: 2025/10/01 12:43:13 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:08:28 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../include/Fixed.hpp"
 
 Fixed::Fixed():
 	_fixedPointValue(0)

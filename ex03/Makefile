@@ -6,7 +6,7 @@
 #    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/08 18:08:47 by yosherau          #+#    #+#              #
-#    Updated: 2026/01/19 14:15:53 by yosherau         ###   ########.fr        #
+#    Updated: 2026/01/19 15:08:04 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC			=		c++
 
 FLAGS		=		-Wall -Wextra -Werror -std=c++98
 
-NAME		=		UpdatedFixed
+NAME		=		BSP
 
 SRCS_DIR	=		./srcs
 

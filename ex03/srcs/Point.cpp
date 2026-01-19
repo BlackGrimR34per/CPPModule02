@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:05:45 by yosherau          #+#    #+#             */
-/*   Updated: 2025/10/01 12:42:32 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:08:38 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "../include/Point.hpp"
 
 Point::Point(void):
 	x(0), y(0)
