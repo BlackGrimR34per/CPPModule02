@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:43:45 by yosherau          #+#    #+#             */
-/*   Updated: 2026/01/19 15:12:48 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/25 15:22:46 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static float	area(Point const &p1, Point const &p2, Point const &p3)
 {
 	float	first_area = p1.get_x() * (p2.get_y() - p3.get_y());
-	float	second_area = p2.get_x() * (p1.get_y() - p3.get_y());
+	float	second_area = p2.get_x() * (p3.get_y() - p1.get_y());
 	float	third_area = p3.get_x() * (p1.get_y() - p2.get_y());
 	float	sum = first_area + second_area + third_area;
 	if (sum < 0)
